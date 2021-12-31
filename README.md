@@ -4,6 +4,10 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 西安电子科技大学研究生学位论文开题报告表XeLaTeX模板
 
+# 版本记录
+
+- `2021-12-31` `v0.0.1` 新增学术学位博士研究生模板。
+
 # 免责声明
 
 本模板的发布遵守[LaTeX Project Public License 1.3c](http://www.latex-project.org/lppl.txt)以及其后的最新版本，使用前请认真阅读协议内容。
