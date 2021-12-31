@@ -30,8 +30,11 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 默认为学术学位博士研究生，即不添加文档类可选参数则为学术学位博士研究生。
 
+此外，在`examples`中已内置对应学位类型的`.tex`文件，用户可以将`xdupgtp.tex`中所有文件内容替换为相应的`xdupgtp-*.tex`文件内容，避免手动配置的麻烦。
+
 # 版本记录
 
+- `2021-12-31` [`v0.2.1`](https://github.com/note286/xdupgtp/releases/tag/v0.2.1) 增加不同学位类型示例文件。
 - `2021-12-31` [`v0.2.0`](https://github.com/note286/xdupgtp/releases/tag/v0.2.0) 新增学术学位硕士研究生模板。
 - `2021-12-31` [`v0.1.0`](https://github.com/note286/xdupgtp/releases/tag/v0.1.0) 新增专业学位博士研究生模板。
 - `2021-12-31` [`v0.0.1`](https://github.com/note286/xdupgtp/releases/tag/v0.0.1) 新增学术学位博士研究生模板。
