@@ -4,8 +4,34 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 西安电子科技大学研究生学位论文开题报告表XeLaTeX模板
 
+# 使用/示例
+
+本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
+
+## 学位类型
+
+本项目模板支持学术学位博士研究生和专业学位博士研究生共两种类型开题报告表，相应的文档类可选参数如下：
+
+- `da`，学术学位博士研究生（Doctor of Academic）
+- `dp`，专业学位博士研究生（Doctor of Professional）
+
+例如，切换为专业学位博士研究生，即将
+
+```latex
+\documentclass{xdupgtp}
+```
+
+改为
+
+```latex
+\documentclass[dp]{xdupgtp}
+```
+
+默认为学术学位博士研究生，即不添加文档类可选参数则为学术学位博士研究生。
+
 # 版本记录
 
+- `2021-12-31` `v0.1.0` 新增专业学位博士研究生模板。
 - `2021-12-31` `v0.0.1` 新增学术学位博士研究生模板。
 
 # 免责声明
