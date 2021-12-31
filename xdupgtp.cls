@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2021/12/31 Xidian University Postgraduate Thesis Proposal class, v0.1.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2021/12/31 Xidian University Postgraduate Thesis Proposal class, v0.2.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -9,7 +9,21 @@
 \newif\ifdp\dpfalse
 \DeclareOption{dp}{\dptrue\dafalse}
 
+% 学术学位硕士研究生 Master of Academic
+\newif\ifma\mafalse
+\DeclareOption{ma}{\matrue\dafalse}
+
 \ProcessOptions\relax
+
+% 博士学位标志位
+\newif\ifddegree\ddegreefalse
+\ifda\ddegreetrue\fi
+\ifdp\ddegreetrue\fi
+
+% 学术学位标志位
+\newif\ifadegree\adegreefalse
+\ifma\adegreetrue\fi
+\ifda\adegreetrue\fi
 
 % 加载ctexart文档类
 \LoadClass[a4paper,zihao=-4,fontset=none]{ctexart}
@@ -104,6 +118,10 @@
     \else
       \ifdp
         专业学位博士学位论文开题报告表
+      \else
+        \ifma
+          硕士学位论文开题报告表
+        \fi
       \fi
     \fi
   }
@@ -161,7 +179,7 @@
   \renewcommand{\arraystretch}{1.35}
   % 排版开题报告元数据
   % 第一列加粗
-  \ifda
+  \ifadegree
     \begin{tabular}{>{\bfseries}cc}
     姓\qquad{}名&\valueWithUL{\metaValueWidth}{\authorName}\\
     一级学科&\valueWithUL{\metaValueWidth}{\major}\\
@@ -194,7 +212,11 @@
   % 开题报告要求
   \begin{center}
   \zihao{3}
-  西安电子科技大学博士学位论文开题报告要求
+  \ifddegree
+    西安电子科技大学博士学位论文开题报告要求
+  \else
+    西安电子科技大学硕士学位论文开题报告要求
+  \fi
   \end{center}
   \vspace{15pt}
   \zihao{-4}\setlength{\baselineskip}{28pt}
@@ -237,6 +259,21 @@
       八、开题必须在规定时间内通过研究生学位管理系统申请，本表由系统自动生成，用A3纸张正反套印。
       \par
       九、表格填写要求：正文字体宋体，字号小四，行间距固定值20磅。
+    \else
+      \ifma
+        \par
+        一、硕士研究生必须在第三学期末之前进行学位论文开题报告。
+        \par
+        二、硕士学位论文的开题报告会由各学院自行组织，硕士研究生必须如实、如期在本学科（领域）或相关学科（领域）范围内公开举行开题报告会，严禁伪造和抄袭开题报告。
+        \par
+        三、开题报告结论分为两种：1.通过，按专家意见修改后进行学位论文撰写工作；2.不通过，重新开题。
+        \par
+        四、在学位论文开题规定的时间期限内休学的硕士研究生，开题的时间期限相应顺延。
+        \par
+        五、开题必须在规定时间内通过研究生学位管理系统申请，本表由系统自动生成，用A3纸张正反套印。
+        \par
+        六、表格填写要求：正文字体宋体，字号小四，行间距固定值20磅。
+      \fi
     \fi
   \fi
   \newpage
@@ -347,7 +384,7 @@
 \newenvironment{bgjl}
   {\vspace*{-0.6\baselineskip-\boxrule}
   \begin{mybox2}
-  \ifda
+  \ifadegree
     （着重记录专家对选题报告提出的问题及修改意见和建议。）
   \else
     \ifdp
@@ -412,6 +449,29 @@
       \textbf{进度安排}
       &时间安排充裕、合理。
       &\yijian\\
+    \else
+      \ifma
+        \textbf{论文选题}
+        &1.选题接触学科前沿，对国民经济、科技发展具有一定的理论意义和实用价值；\newline
+        2.国内外研究现状综合全面反映该学科或相关领域的最新研究成果，归纳总结正确。
+        &\yijian\\
+        \specialrule{\boxrule}{0pt}{0pt}
+        \textbf{研究方案}
+        &1.研究目标明确；\newline
+        2.整体设想及构架科学合理；\newline
+        3.研究内容有独到之处，提出了新命题、新方法；较好地解决了自然科学或工程技术中的某一具体问题；\newline
+        4.研究或设计方法科学合理，关键技术有难度；\newline
+        5.预期取得的研究成果有一定的应用价值，可产生一定的社会效益和经济效益。
+        &\yijian\\
+        \specialrule{\boxrule}{0pt}{0pt}
+        \textbf{研究基础}
+        &具备了较好的实验条件和较为深厚的研究工作积累。
+        &\yijian\\
+        \specialrule{\boxrule}{0pt}{0pt}
+        \textbf{进度安排}
+        &时间安排充裕、合理。
+        &\yijian\\
+      \fi
     \fi
   \fi
   \end{tabular}
@@ -431,11 +491,15 @@
   年\qquad 月\qquad 日
   \end{mybox2}}
 
-\ifda
+\ifadegree
   \newenvironment{jsyj}
     {\vspace*{-0.6\baselineskip-\boxrule}
     \begin{mybox2}
-    （重点对博士生按照开题报告会上专家意见建议进行修改的情况予以说明。）
+    \ifddegree
+      （重点对博士生按照开题报告会上专家意见建议进行修改的情况予以说明。）
+    \else
+      （重点对硕士生的开题情况以及是否同意开题予以说明。）
+    \fi
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
     指导教师签名：\phantom{指导教师签名}\\

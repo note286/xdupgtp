@@ -10,10 +10,11 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 ## 学位类型
 
-本项目模板支持学术学位博士研究生和专业学位博士研究生共两种类型开题报告表，相应的文档类可选参数如下：
+本项目模板支持学术学位博士研究生、专业学位博士研究生和学术学位硕士研究生共3种类型开题报告表，相应的文档类可选参数如下：
 
 - `da`，学术学位博士研究生（Doctor of Academic）
 - `dp`，专业学位博士研究生（Doctor of Professional）
+- `ma`，学术学位硕士研究生（Master of Academic）
 
 例如，切换为专业学位博士研究生，即将
 
@@ -31,6 +32,7 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 # 版本记录
 
+- `2021-12-31` [`v0.2.0`](https://github.com/note286/xdupgtp/releases/tag/v0.2.0) 新增学术学位硕士研究生模板。
 - `2021-12-31` [`v0.1.0`](https://github.com/note286/xdupgtp/releases/tag/v0.1.0) 新增专业学位博士研究生模板。
 - `2021-12-31` [`v0.0.1`](https://github.com/note286/xdupgtp/releases/tag/v0.0.1) 新增学术学位博士研究生模板。
 
