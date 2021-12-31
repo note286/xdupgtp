@@ -31,8 +31,8 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 # 版本记录
 
-- `2021-12-31` `v0.1.0` 新增专业学位博士研究生模板。
-- `2021-12-31` `v0.0.1` 新增学术学位博士研究生模板。
+- `2021-12-31` [`v0.1.0`](https://github.com/note286/xdupgtp/releases/tag/v0.1.0) 新增专业学位博士研究生模板。
+- `2021-12-31` [`v0.0.1`](https://github.com/note286/xdupgtp/releases/tag/v0.0.1) 新增学术学位博士研究生模板。
 
 # 免责声明
 
