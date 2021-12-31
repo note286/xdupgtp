@@ -1,4 +1,7 @@
-# xdupgtp
+# 项目名称
+
+xdupgtp-Xidian University Postgraduate Thesis Proposal
+
 西安电子科技大学研究生学位论文开题报告表XeLaTeX模板
 
 # 免责声明
