@@ -88,13 +88,19 @@ sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf times
 
 在[Overleaf in Chinese](https://cn.overleaf.com/)平台使用时，由于Overleaf是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgtp/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
 
-在Overleaf左上角点击创建新项目，选择上传项目，将压缩包上传至Overleaf，会自动进入该论文模板项目。点击左上角新建目录按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传按钮将所有的字体文件上传。最后根据[Overleaf编译](#overleaf编译)配置如何在线编译。
+在Overleaf左上角点击创建新项目，选择上传项目，将压缩包上传至Overleaf，会自动进入该研究生学位论文开题报告表模板项目。点击左上角新建目录按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传按钮将所有的字体文件上传。最后根据[Overleaf编译](#overleaf编译)配置如何在线编译。
 
 ### TeXPage
 
 在[TeXPage](https://www.texpage.com/)平台使用时，由于TeXPage是安装在GNU/Linux上的最新版的TeX Live，用户无需考虑LaTeX套装版本问题，仅需要安装字体即可，用户首先将本仓库[下载](https://github.com/note286/xdupgtp/archive/refs/heads/main.zip)，再根据[GNU/Linux](#gnulinux)中的方法得到字体文件。
 
-在TeXPage[个人主页](https://www.texpage.com/console)左上角点击创建，选择上传项目，将压缩包上传至TeXPage，进入该论文模板项目。点击左上角新建文件夹按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传文件按钮将所有的字体文件上传。最后根据[TeXPage编译](#texpage编译)配置如何在线编译。
+在TeXPage[个人主页](https://www.texpage.com/console)左上角点击创建，选择上传项目，将压缩包上传至TeXPage，进入该研究生学位论文开题报告表模板项目。点击左上角新建文件夹按钮，新建一个名为`fonts`的文件夹，选中`fonts`文件夹，点击左上角上传文件按钮将所有的字体文件上传。最后根据[TeXPage编译](#texpage编译)配置如何在线编译。
+
+## 下载与编辑
+
+请点击[下载](https://github.com/note286/xdupgtp/archive/refs/heads/main.zip)压缩包或[克隆](x-github-client://openRepo/https://github.com/note286/xdupgtp)该仓库，用户可直接修改`.tex`和`.bib`等类型文件来进行研究生学位论文开题报告表的撰写。具体来说，用户通过编辑`xdupgtp.tex`和`xdupgtp.bib`文件来撰写论文内容。此外，`xdupgtp.cls`文件请不要修改。
+
+其中，仅选题依据、研究方案、研究基础和开题报告记录这四部分支持自动分页，无需用户手动分页，其他部分仅支持单页内容的撰写。
 
 ## 学位类型
 
