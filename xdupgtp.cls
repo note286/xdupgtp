@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.5.1, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/02 Xidian University Postgraduate Thesis Proposal class, v0.6.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -16,6 +16,13 @@
 % 专业学位硕士研究生 Master of Professional
 \newif\ifmp\mpfalse
 \DeclareOption{mp}{\mptrue\dafalse}
+
+% overleaf
+\newif\ifoverleaf\overleaffalse
+\DeclareOption{overleaf}{\overleaftrue}
+
+% texpage
+\DeclareOption{texpage}{\overleaftrue}
 
 \ProcessOptions\relax
 
@@ -91,18 +98,37 @@
 % 自定义加粗加斜程度
 \newcommand\FakeBoldValue{3}
 \newcommand\FakeSlantValue{0.2}
-% 配置默认英文字体
-\setmainfont{Times New Roman}
-% 配置默认中文字体
-\setCJKmainfont{SimSun}[
-  BoldFont={SimSun},BoldFeatures={FakeBold=\FakeBoldValue},
-  SlantedFont={SimSun},SlantedFeatures={FakeSlant=\FakeSlantValue},
-  BoldSlantedFont={SimSun},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
-  ItalicFont={KaiTi},
-  BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}
-  ]
-% 定义黑体字体
-\newCJKfontfamily\heiti{SimHei}[BoldFont={SimHei},BoldFeatures={FakeBold=\FakeBoldValue}]
+\ifoverleaf
+  % 配置默认英文字体
+  \setmainfont{times.ttf}
+    [Path=fonts/,
+    BoldFont=timesbd.ttf,
+    ItalicFont=timesi.ttf,
+    BoldItalicFont=timesbi.ttf]
+  % 配置默认中文字体
+  \setCJKmainfont{simsun.ttc}
+    [Path=fonts/,
+    BoldFont={simsun.ttc},BoldFeatures={FakeBold=\FakeBoldValue},
+    SlantedFont={simsun.ttc},SlantedFeatures={FakeSlant=\FakeSlantValue},
+    BoldSlantedFont={simsun.ttc},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
+    ItalicFont={simkai.ttf},
+    BoldItalicFont={simkai.ttf},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
+  % 定义黑体字体
+  \newCJKfontfamily\heiti{simhei.ttf}[Path=fonts/]
+\else
+  % 配置默认英文字体
+  \setmainfont{Times New Roman}
+  % 配置默认中文字体
+  \setCJKmainfont{SimSun}[
+    BoldFont={SimSun},BoldFeatures={FakeBold=\FakeBoldValue},
+    SlantedFont={SimSun},SlantedFeatures={FakeSlant=\FakeSlantValue},
+    BoldSlantedFont={SimSun},BoldSlantedFeatures={FakeBold=\FakeBoldValue,FakeSlant=\FakeSlantValue},
+    ItalicFont={KaiTi},
+    BoldItalicFont={KaiTi},BoldItalicFeatures={FakeBold=\FakeBoldValue}
+    ]
+  % 定义黑体字体
+  \newCJKfontfamily\heiti{SimHei}[BoldFont={SimHei},BoldFeatures={FakeBold=\FakeBoldValue}]
+\fi
 
 % 设置各级标题样式
 \ctexset{
