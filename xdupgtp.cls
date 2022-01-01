@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.3.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.4.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -55,6 +55,9 @@
 \RequirePackage[left=3cm,right=3cm,top=2.5cm,bottom=2.5cm,footskip=0cm,headsep=0cm,headheight=0cm]{geometry}
 % 自定义环境
 \RequirePackage{environ}
+% 参考文献引用
+\RequirePackage[sort&compress,square,super,comma]{natbib}
+\setlength{\bibsep}{0pt}
 
 % 设置页面样式为空
 \pagestyle{empty}
@@ -429,7 +432,9 @@
 \newenvironment{xtyj}
   {\vspace*{-0.6\baselineskip-\boxrule}
   \begin{mybox2}}
-  {\end{mybox2}}
+  {\bibliographystyle{gbt7714-numerical}
+  \bibliography{xdupgtp}
+  \end{mybox2}}
 
 \newenvironment{yjfa}
   {\vspace*{-0.6\baselineskip-\boxrule}
