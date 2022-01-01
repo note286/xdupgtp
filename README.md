@@ -8,6 +8,36 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 本节介绍了一些使用本项目模板的方法，建议用户根据自身情况阅读。
 
+## 卸载与安装
+
+Windows和GNU/Linux平台使用[TeX Live](https://www.tug.org/texlive/)，macOS平台使用[MacTeX](https://www.tug.org/mactex/)，跨版本升级均需要卸载旧版。
+
+Windows平台卸载方法为管理员身份直接运行`C:\texlive\2021\tlpkg\installer\uninst.bat`，不同版本和安装位置请按需修改目录，更多介绍请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第1.2节，GNU/Linux平台卸载方法请参考[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)第2.2节，macOS上卸载方法请参考[Uninstalling MacTeX](https://www.tug.org/mactex/uninstalling.html)。
+
+本项目模板仅在TeX Live/MacTeX 2021通过测试，其他旧版本并未实际进行测试。建议安装最新版LaTeX发行版套装并更新所有包，如果已安装TeX Live或MacTeX并且能够编译，用户可以选择不升级套装，不更新包。
+
+校内睿思下载地址：[TeX Live 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094234)和[MacTeX 2021](http://rs.xidian.edu.cn/forum.php?mod=viewthread&tid=1094235)，最新版中科大源校外下载地址：[TeX Live](https://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/texlive.iso)和[MacTeX](https://mirrors.ustc.edu.cn/CTAN/systems/mac/mactex/MacTeX.pkg)。
+
+后续如无特殊情况，仅以Windows举例，其他操作系统上类似。右键选择下载好的`.iso`文件，选择打开方式->Windows资源管理器，然后右键以管理员身份运行`install-tl-windows.bat`，保持默认配置即可，如没有本地阅读文档的需求，安装时可以不勾选安装文档的选项，这样会减少大约一半的磁盘占用空间，具体来说，在TeX Live安装窗口中点击左下角Advanced，取消勾选安装字体/宏包文档目录树和安装字体/宏包源码目录树即可不安装文档和源码。更多LaTeX环境安装与配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，建议更新所有包至最新版，Windows平台上使用管理员身份运行[cmd](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmd)。
+
+### 配置镜像源
+
+管理员权限运行
+
+```shell
+tlmgr repository set https://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet/
+```
+
+### 更新包管理器和所有包
+
+管理员权限运行
+
+```shell
+tlmgr update --all --self
+```
+
+如果遇到更新失败，重新执行一遍。
+
 ## 字体安装
 
 考虑到可能存在版权问题，故不提供字体文件或字体下载链接。
