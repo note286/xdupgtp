@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2021/12/31 Xidian University Postgraduate Thesis Proposal class, v0.2.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.2.2, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -352,13 +352,11 @@
   before upper={\parindent 2em \linespread{1}\fontsize{12}{20}\selectfont}
 }
 
-\newenvironment{xtly}
-  {\begin{mybox1}
-  选题来源：}
-  {\end{mybox1}}
-
 \newenvironment{zwzy}
-  {\vspace*{-\baselineskip-\boxrule}
+  {\begin{mybox1}
+  选题来源：\subjectSource
+  \end{mybox1}
+  \vspace*{-\baselineskip-\boxrule}
   \begin{mybox1}
   中文摘要：
   \end{mybox1}
