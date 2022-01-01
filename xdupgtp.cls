@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.2.2, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.3.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -12,6 +12,10 @@
 % 学术学位硕士研究生 Master of Academic
 \newif\ifma\mafalse
 \DeclareOption{ma}{\matrue\dafalse}
+
+% 专业学位硕士研究生 Master of Professional
+\newif\ifmp\mpfalse
+\DeclareOption{mp}{\mptrue\dafalse}
 
 \ProcessOptions\relax
 
@@ -37,6 +41,8 @@
 \RequirePackage{amssymb}
 % 增强表格
 \RequirePackage{array}
+% 表格
+\RequirePackage{tabularx}
 % 自定义宽度表格横线
 \RequirePackage{booktabs}
 % 条件判断
@@ -121,6 +127,10 @@
       \else
         \ifma
           硕士学位论文开题报告表
+        \else
+          \ifmp
+            专业学位硕士学位论文开题报告表
+          \fi
         \fi
       \fi
     \fi
@@ -146,7 +156,11 @@
   \ifthenelse{\thesisTitleTwoWidth=0}{\vspace{25pt}}{
     \\\phantom{\textbf{论文题目：}}\valueWithUL{\titleValueWidth}{\thesisTitleTwo}}
   \end{center}
-  \vspace{80pt}
+  \ifmp
+    \vspace{47.5pt}
+  \else
+    \vspace{80pt}
+  \fi
   % 个人信息
   \begin{center}
   % 设置字号为16pt
@@ -166,6 +180,10 @@
   \settowidth{\advisorNameWidth}{\advisorName}
   \settowidth{\schoolWidth}{\school}
   \settowidth{\submitDateWidth}{\submitDate}
+  \ifmp
+    \newlength\entadvisorNameWidth
+    \settowidth{\entadvisorNameWidth}{\entadvisorName}
+  \fi
   % 计算最大值
   \setlength{\metaValueWidth}{
   \maxof{\authorNameWidth}{
@@ -173,6 +191,10 @@
   \maxof{\submajorWidth}{
   \maxof{\advisorNameWidth}{
   \maxof{\schoolWidth}{\submitDateWidth}}}}}}
+  \ifmp
+    \setlength{\metaValueWidth}{
+    \maxof{\metaValueWidth}{\entadvisorNameWidth}}
+  \fi
   % 补充1em长度 使得下划线略长于文本
   \addtolength{\metaValueWidth}{1em}
   % 增加高度
@@ -198,6 +220,18 @@
       学\qquad{}院&\valueWithUL{\metaValueWidth}{\school}\\
       开题日期&\valueWithUL{\metaValueWidth}{\submitDate}\\
       \end{tabular}
+    \else
+      \ifmp
+        \begin{tabular}{>{\bfseries}lc}
+        姓\qquad{}名&\valueWithUL{\metaValueWidth}{\authorName}\\
+        学位类别&\valueWithUL{\metaValueWidth}{\major}\\
+        领\qquad{}域&\valueWithUL{\metaValueWidth}{\submajor}\\
+        校内教师&\valueWithUL{\metaValueWidth}{\advisorName}\\
+        校外教师&\valueWithUL{\metaValueWidth}{\entadvisorName}\\
+        学\qquad{}院&\valueWithUL{\metaValueWidth}{\school}\\
+        开题日期&\valueWithUL{\metaValueWidth}{\submitDate}\\
+        \end{tabular}
+      \fi
     \fi
   \fi
   \end{center}
@@ -260,20 +294,18 @@
       \par
       九、表格填写要求：正文字体宋体，字号小四，行间距固定值20磅。
     \else
-      \ifma
-        \par
-        一、硕士研究生必须在第三学期末之前进行学位论文开题报告。
-        \par
-        二、硕士学位论文的开题报告会由各学院自行组织，硕士研究生必须如实、如期在本学科（领域）或相关学科（领域）范围内公开举行开题报告会，严禁伪造和抄袭开题报告。
-        \par
-        三、开题报告结论分为两种：1.通过，按专家意见修改后进行学位论文撰写工作；2.不通过，重新开题。
-        \par
-        四、在学位论文开题规定的时间期限内休学的硕士研究生，开题的时间期限相应顺延。
-        \par
-        五、开题必须在规定时间内通过研究生学位管理系统申请，本表由系统自动生成，用A3纸张正反套印。
-        \par
-        六、表格填写要求：正文字体宋体，字号小四，行间距固定值20磅。
-      \fi
+      \par
+      一、硕士研究生必须在第三学期末之前进行学位论文开题报告。
+      \par
+      二、硕士学位论文的开题报告会由各学院自行组织，硕士研究生必须如实、如期在本学科（领域）或相关学科（领域）范围内公开举行开题报告会，严禁伪造和抄袭开题报告。
+      \par
+      三、开题报告结论分为两种：1.通过，按专家意见修改后进行学位论文撰写工作；2.不通过，重新开题。
+      \par
+      四、在学位论文开题规定的时间期限内休学的硕士研究生，开题的时间期限相应顺延。
+      \par
+      五、开题必须在规定时间内通过研究生学位管理系统申请，本表由系统自动生成，用A3纸张正反套印。
+      \par
+      六、表格填写要求：正文字体宋体，字号小四，行间距固定值20磅。
     \fi
   \fi
   \newpage
@@ -352,17 +384,47 @@
   before upper={\parindent 2em \linespread{1}\fontsize{12}{20}\selectfont}
 }
 
-\newenvironment{zwzy}
-  {\begin{mybox1}
-  选题来源：\subjectSource
-  \end{mybox1}
-  \vspace*{-\baselineskip-\boxrule}
-  \begin{mybox1}
-  中文摘要：
-  \end{mybox1}
-  \vspace*{-\baselineskip-\boxrule}
-  \begin{mybox2}}
-  {\end{mybox2}}
+\ifmp
+  \NewEnviron{zwzy}
+    {\vspace*{0.1\baselineskip-0.5\boxrule}
+    \newlength\zwzyWidth
+    \setlength\zwzyWidth{\textheight-5.4\baselineskip}
+    \begin{center}
+    \newcolumntype{?}{!{\vrule width \boxrule}}
+    \begin{tabularx}{\textwidth}{?c?X?}
+    \specialrule{\boxrule}{0pt}{0pt}
+    实习单位名称&\practiceInst\\
+    \specialrule{\boxrule}{0pt}{0pt}
+    实习岗位&\practicePost\\
+    \specialrule{\boxrule}{0pt}{0pt}
+    实习实践模式&\practiceMode\\
+    \specialrule{\boxrule}{0pt}{0pt}
+    计划实习时间&\practiceTime\\
+    \specialrule{\boxrule}{0pt}{0pt}
+    论文类型&\thesisType\\
+    \specialrule{\boxrule}{0pt}{0pt}
+    选题来源&\subjectSource\\
+    \specialrule{\boxrule}{0pt}{0pt}
+    \parbox[t][\zwzyWidth][c]{1em}{中文摘要}&
+    \parindent 2em
+    \BODY \\
+    \specialrule{\boxrule}{0pt}{0pt}
+    \end{tabularx}
+    \end{center}
+    \newpage}
+\else
+  \newenvironment{zwzy}
+    {\begin{mybox1}
+    选题来源：\subjectSource
+    \end{mybox1}
+    \vspace*{-\baselineskip-\boxrule}
+    \begin{mybox1}
+    中文摘要：
+    \end{mybox1}
+    \vspace*{-\baselineskip-\boxrule}
+    \begin{mybox2}}
+    {\end{mybox2}}
+\fi
 
 \newenvironment{xtyj}
   {\vspace*{-0.6\baselineskip-\boxrule}
@@ -382,12 +444,10 @@
 \newenvironment{bgjl}
   {\vspace*{-0.6\baselineskip-\boxrule}
   \begin{mybox2}
-  \ifadegree
-    （着重记录专家对选题报告提出的问题及修改意见和建议。）
-  \else
-    \ifdp
+  \ifdp
     （着重记录专家对开题报告提出的问题及修改意见和建议。）
-    \fi
+  \else
+    （着重记录专家对选题报告提出的问题及修改意见和建议。）
   \fi
   \par}
   {\end{mybox2}}
@@ -469,6 +529,26 @@
         \textbf{进度安排}
         &时间安排充裕、合理。
         &\yijian\\
+      \else
+        \textbf{论文选题}
+        &1.选题具有重要的理论意义或实际意义，是直接面向工程或具有探索性的应用课题；\newline
+        2.国内外研究现状综合全面反映该领域的最新研究成果，归纳总结正确。
+        &\yijian\\
+        \specialrule{\boxrule}{0pt}{0pt}
+        \textbf{研究方案}
+        &1.研究目标明确；\newline
+        2.整体设想及构架科学合理；\newline
+        3.研究或设计方法科学合理，关键技术有难度；\newline
+        4.预期取得的研究成果具有实用性和新技术应用价值，可产生一定的社会效益和经济效益。
+        &\yijian\\
+        \specialrule{\boxrule}{0pt}{0pt}
+        \textbf{研究基础}
+        &具备了较好的实验条件和较为深厚的研究工作积累。
+        &\yijian\\
+        \specialrule{\boxrule}{0pt}{0pt}
+        \textbf{进度安排}
+        &时间安排充裕、合理。
+        &\yijian\\
       \fi
     \fi
   \fi
@@ -507,30 +587,38 @@
   \NewEnviron{jsyj}{}
 \fi
 
-\ifdp
+\ifadegree
+  \NewEnviron{xnjsyj}{}
+\else
   \newenvironment{xnjsyj}
     {\vspace*{0.1\baselineskip-0.5\boxrule}
     \begin{mybox4}
-    （重点对博士生的开题情况以及是否同意开题予以说明。）
+    \ifddegree
+      （重点对博士生的开题情况以及是否同意开题予以说明。）
+    \else
+      （重点对硕士生的开题情况以及是否同意开题予以说明。）
+    \fi
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
     校内导师签名：\phantom{校内导师签名}\\
     年\qquad 月\qquad 日
     \end{mybox4}}
-\else
-  \NewEnviron{xnjsyj}{}
 \fi
 
-\ifdp
+\ifadegree
+  \NewEnviron{xyjsyj}{}
+\else
   \newenvironment{xyjsyj}
     {\vspace*{-\baselineskip-\boxrule}
     \begin{mybox4}
-    （重点对博士生的开题情况以及是否同意开题予以说明。）
+    \ifddegree
+      （重点对博士生的开题情况以及是否同意开题予以说明。）
+    \else
+      （重点对硕士生的开题情况以及是否同意开题予以说明。）
+    \fi
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
     校外导师签名：\phantom{校外导师签名}\\
     年\qquad 月\qquad 日
     \end{mybox4}}
-\else
-  \NewEnviron{xyjsyj}{}
 \fi
