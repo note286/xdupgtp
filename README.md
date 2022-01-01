@@ -77,6 +77,7 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 # 版本记录
 
+- `2022-01-01` [`v0.5.0`](https://github.com/note286/xdupgtp/releases/tag/v0.5.0) 支持自动添加PDF元数据。
 - `2022-01-01` [`v0.4.1`](https://github.com/note286/xdupgtp/releases/tag/v0.4.1) 配置\subsubsection{}样式。
 - `2022-01-01` [`v0.4.0`](https://github.com/note286/xdupgtp/releases/tag/v0.4.0) 支持国内外研究现状引用参考文献。
 - `2022-01-01` [`v0.3.0`](https://github.com/note286/xdupgtp/releases/tag/v0.3.0) 新增专业学位硕士研究生模板。

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.4.1, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.5.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -58,6 +58,30 @@
 % 参考文献引用
 \RequirePackage[sort&compress,square,super,comma]{natbib}
 \setlength{\bibsep}{0pt}
+
+% 设置PDF元数据
+\ifda
+  \newcommand\xdupgtptitle{博士学位论文开题报告表}
+\else
+  \ifdp
+    \newcommand\xdupgtptitle{专业学位博士学位论文开题报告表}
+  \else
+    \ifma
+      \newcommand\xdupgtptitle{硕士学位论文开题报告表}
+    \else
+      \ifmp
+        \newcommand\xdupgtptitle{专业学位硕士学位论文开题报告表}
+      \fi
+    \fi
+  \fi
+\fi
+\BeforeBeginEnvironment{document}{
+  \hypersetup{
+    pdftitle={\thesisTitleOne\thesisTitleTwo},
+    pdfauthor={\authorName},
+    pdfsubject={西安电子科技大学\xdupgtptitle}
+  }
+}
 
 % 设置页面样式为空
 \pagestyle{empty}
@@ -132,23 +156,7 @@
   \zihao{3}
   \bfseries
   \makebox[11em][s]{西安电子科技大学}\\
-  {\zihao{-2}\heiti
-    \ifda
-      博士学位论文开题报告表
-    \else
-      \ifdp
-        专业学位博士学位论文开题报告表
-      \else
-        \ifma
-          硕士学位论文开题报告表
-        \else
-          \ifmp
-            专业学位硕士学位论文开题报告表
-          \fi
-        \fi
-      \fi
-    \fi
-  }
+  {\zihao{-2}\heiti\xdupgtptitle}
   \end{center}
   \vspace{65pt}
   % 论文题目
