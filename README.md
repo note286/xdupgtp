@@ -266,6 +266,25 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 在示例文件中已经提供了若干个条目供参考。需要注意的是，无论中英文，每个作者均使用`and`连接。除非文献卷号、期号和页码均无，否则不必提供DOI选项。对于网页链接，使用`misc`类型条目，填写`author`、`title`、`howpublished`和`year`选项即可。
 
+## 字体形状与字体系列
+
+本项目模板正文默认使用中易宋体和Times New Roman，支持常用的字体形状如意大利和倾斜，支持常见的字体系列如加宽加粗。
+
+对于中易宋体，意大利形状对应中易楷体，倾斜形状对应中易宋体伪斜体，加宽加粗系列对应中易宋体伪粗体。其中，参考[fontspec.pdf](https://mirrors.ustc.edu.cn/CTAN/macros/unicodetex/latex/fontspec/fontspec.pdf)中的示例，设置倾斜程度为`0.2`，参考清华大学学位论文模板[thuthesis.dtx](https://mirrors.ustc.edu.cn/CTAN/macros/latex/contrib/thuthesis/thuthesis.dtx)，设置粗细程度为`3`。
+
+对于Times New Roman，意大利形状及加宽加粗系列均有对应的Times New Roman字体文件，倾斜形状与意大利形状一致，因此无需伪斜体和伪粗体。
+
+字体形状和字体系列可以组合使用，例如：
+
+```latex
+意大利形状\textit{测试ABCabc123}
+倾斜形状\textsl{测试ABCabc123}
+加宽加粗系列\textbf{测试ABCabc123}
+加宽加粗系列叠加意大利形状\textbf{\textit{测试ABCabc123}}
+加宽加粗系列叠加倾斜形状\textbf{\textsl{测试ABCabc123}}
+强调\emph{测试ABCabc123}
+```
+
 # 版本记录
 
 - `2022-01-02` [`v0.6.0`](https://github.com/note286/xdupgtp/releases/tag/v0.6.0) 新增支持Overleaf和TeXPage。
