@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.4.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/01 Xidian University Postgraduate Thesis Proposal class, v0.4.1, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -97,6 +97,17 @@
     titleformat={},
     beforeskip={8pt plus 0pt minus 0pt},
     afterskip={0pt plus 0pt minus 0pt}
+  }
+}
+\ctexset{
+  subsubsection={name={（,）},
+    number={\arabic{subsubsection}},
+    format={\raggedright\bfseries\zihao{-4}},
+    aftername={},
+    titleformat={},
+    beforeskip={8pt plus 0pt minus 0pt},
+    afterskip={0pt plus 0pt minus 0pt},
+    indent={2em}
   }
 }
 
