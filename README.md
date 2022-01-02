@@ -354,6 +354,17 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 强调\emph{测试ABCabc123}
 ```
 
+# 模板来源
+
+所有模板均参照[西安电子科技大学研究生院/研究生工作部](https://gr.xidian.edu.cn/xwsy/zlxz.htm)提供的Microsoft Word模板进行开发，建议用户使用前下载最新的Microsoft Word模板，对比MD5是否有变化，如有变化可以提issue请求更新模板，如无变化，可以检查下XeLaTeX模板与Microsoft Word模板是否一致。
+
+- [学术学位博士研究生](https://gr.xidian.edu.cn/info/1047/7160.htm) MD5：4711941B554EDD2F95A205CA7C3F59AC
+- [专业学位博士研究生](https://gr.xidian.edu.cn/info/1047/7803.htm) MD5：9BAEAE70B292FA8729A25B89CA2FC07C
+- [学术学位硕士研究生](https://gr.xidian.edu.cn/info/1047/5087.htm) MD5：6E8904BD71541CFB90B90B0431CEACDE
+- 专业学位硕士研究生
+  - [统招专业学位硕士研究生](https://gr.xidian.edu.cn/info/1047/5086.htm) MD5：CB51149A636AD52E3F9B0B391AD07E8C
+  - [非统招专业学位硕士研究生](https://gr.xidian.edu.cn/info/1047/5086.htm) MD5：CB51149A636AD52E3F9B0B391AD07E8C
+
 # 版本记录
 
 - `2022-01-02` [`v0.6.0`](https://github.com/note286/xdupgtp/releases/tag/v0.6.0) 新增支持Overleaf和TeXPage。
