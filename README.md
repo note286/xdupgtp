@@ -103,31 +103,32 @@ Windows平台无需手动配置字体，所需字体Windows操作系统已内置
 
 ### GNU/Linux
 
-由于默认情况下中易宋体的意大利形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。
+由于默认情况下中易宋体的意大利形状对应的是中易楷体，因此中文字体除中易宋体和中易黑体外，还需要中易楷体。此外，第2页开题报告要求标题所用字体为华文中宋。
 
-用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共7个字体文件至GNU/Linux，其中三个中文字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的四个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这7个字体文件传输至GNU/Linux。
+用户可以从Windows操作系统字体库中拷贝出`simhei.ttf`、`simkai.ttf`、`simsun.ttc`、`STZHONGS.TTF`、`times.ttf`、`timesbd.ttf`、`timesbi.ttf`和`timesi.ttf`共8个字体文件至GNU/Linux，其中4个中文字体文件位于`C:\Windows\Fonts`处，Times New Roman字体的4个字体文件位于`C:\Windows\Fonts\Times New Roman`处。用户在查找字体时，可以根据Windows中英文系统内字体名称来查找，找到后复制该字体，粘贴至某个空白文件夹即可得到对应的字体文件，然后将这8个字体文件传输至GNU/Linux。
 
-|    字体名称     | 字体文件名  |  Windows英文系统内字体名称  | Windows中文系统内字体名称 |
-| :-------------: | :---------: | :-------------------------: | :-----------------------: |
-|    中易黑体     | simhei.ttf  |       SimHei Regular        |         黑体 常规         |
-|    中易楷体     | simkai.ttf  |        KaiTi Regular        |         楷体 常规         |
-|    中易宋体     | simsun.ttc  |       SimSun Regular        |         宋体 常规         |
-| Times New Roman |  times.ttf  |   Times New Roman Regular   |   Times New Roman 常规    |
-| Times New Roman | timesbd.ttf |    Times New Roman Bold     |   Times New Roman 粗体    |
-| Times New Roman | timesbi.ttf | Times New Roman Bold Italic |  Times New Roman 粗斜体   |
-| Times New Roman | timesi.ttf  |   Times New Roman Italic    |   Times New Roman 斜体    |
+|    字体名称     |  字体文件名  |  Windows英文系统内字体名称  | Windows中文系统内字体名称 |
+| :-------------: | :----------: | :-------------------------: | :-----------------------: |
+|    中易黑体     |  simhei.ttf  |       SimHei Regular        |         黑体 常规         |
+|    中易楷体     |  simkai.ttf  |        KaiTi Regular        |         楷体 常规         |
+|    中易宋体     |  simsun.ttc  |       SimSun Regular        |         宋体 常规         |
+|    华文中宋     | STZHONGS.TTF |     STZhongsong Regular     |       华文中宋 常规       |
+| Times New Roman |  times.ttf   |   Times New Roman Regular   |   Times New Roman 常规    |
+| Times New Roman | timesbd.ttf  |    Times New Roman Bold     |   Times New Roman 粗体    |
+| Times New Roman | timesbi.ttf  | Times New Roman Bold Italic |  Times New Roman 粗斜体   |
+| Times New Roman |  timesi.ttf  |   Times New Roman Italic    |   Times New Roman 斜体    |
 
 使用如下命令在GNU/Linux安装字体：
 
 ```shell
-sudo cp simhei.ttf simkai.ttf simsun.ttc times.ttf timesbd.ttf timesbi.ttf timesi.ttf /usr/share/fonts
+sudo cp simhei.ttf simkai.ttf simsun.ttc STZHONGS.TTF times.ttf timesbd.ttf timesbi.ttf timesi.ttf /usr/share/fonts
 ```
 
 然后就可以根据[编译](#编译)里的方法去编译了。
 
 ### macOS
 
-参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可。注意，虽然macOS内置了Times New Roman字体，但是该内置字体版本过于老旧，有缺字的现象，建议将7个字体文件全部安装。
+参考[GNU/Linux](#gnulinux)从Windows平台提取字体文件，然后在macOS上双击安装字体文件即可。注意，虽然macOS内置了Times New Roman字体，但是该内置字体版本过于老旧，有缺字的现象，建议将8个字体文件全部安装。
 
 然后就可以根据[编译](#编译)里的方法去编译了。
 
@@ -406,6 +407,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 # 版本记录
 
+- `2022-01-02` [`v0.7.1`](https://github.com/note286/xdupgtp/releases/tag/v0.7.1) 修正开题报告要求标题字体。
 - `2022-01-02` [`v0.7.0`](https://github.com/note286/xdupgtp/releases/tag/v0.7.0) 支持签名图像。
 - `2022-01-02` [`v0.6.0`](https://github.com/note286/xdupgtp/releases/tag/v0.6.0) 新增支持Overleaf和TeXPage。
 - `2022-01-01` [`v0.5.1`](https://github.com/note286/xdupgtp/releases/tag/v0.5.1) 修复开题报告评语及结论中脚注不显示的bug。

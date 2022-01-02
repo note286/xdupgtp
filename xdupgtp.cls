@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/02 Xidian University Postgraduate Thesis Proposal class, v0.7.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/02 Xidian University Postgraduate Thesis Proposal class, v0.7.1, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -127,7 +127,9 @@
     ItalicFont={simkai.ttf},
     BoldItalicFont={simkai.ttf},BoldItalicFeatures={FakeBold=\FakeBoldValue}]
   % 定义黑体字体
-  \newCJKfontfamily\heiti{simhei.ttf}[Path=fonts/]
+  \newCJKfontfamily\heiti{simhei.ttf}[Path=fonts/,BoldFont={simhei.ttf},BoldFeatures={FakeBold=\FakeBoldValue}]
+  % 定义华文中宋字体
+  \newCJKfontfamily\stzhongsong{STZHONGS.TTF}[BoldFont={STZHONGS.TTF},BoldFeatures={FakeBold=\FakeBoldValue}]
 \else
   % 配置默认英文字体
   \setmainfont{Times New Roman}
@@ -141,6 +143,8 @@
     ]
   % 定义黑体字体
   \newCJKfontfamily\heiti{SimHei}[BoldFont={SimHei},BoldFeatures={FakeBold=\FakeBoldValue}]
+  % 定义华文中宋字体
+  \newCJKfontfamily\stzhongsong{STZhongsong}[BoldFont={STZhongsong},BoldFeatures={FakeBold=\FakeBoldValue}]
 \fi
 
 % 设置各级标题样式
@@ -307,6 +311,7 @@
   \vspace*{-28pt}
   % 开题报告要求
   \begin{center}
+  \stzhongsong
   \zihao{3}
   \ifddegree
     西安电子科技大学博士学位论文开题报告要求
