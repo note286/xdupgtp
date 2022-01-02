@@ -27,6 +27,7 @@
     - [Texmaker编译](#texmaker编译)
     - [Overleaf编译](#overleaf编译)
     - [TeXPage编译](#texpage编译)
+  - [文档类可选参数](#文档类可选参数)
   - [参考文献引用](#参考文献引用)
   - [字体形状与字体系列](#字体形状与字体系列)
 - [模板来源](#模板来源)
@@ -303,6 +304,19 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 ```
 
 后即可正常编译。
+
+## 文档类可选参数
+
+本项目模板中`xdupgtp`文档类支持如下可选参数：
+
+- `overleaf`或`texpage`，详见[Overleaf编译](#overleaf编译)或[TeXPage编译](#texpage编译)
+- `da`、`dp`、`ma`或`mp`，详见[学位类型](#学位类型)
+
+以上参数功能相互独立，均可任意组合使用，选项之间无先后顺序之分，多个选项之间使用逗号隔开，例如：
+
+```latex
+\documentclass[overleaf,ma]{xdupgtp}
+```
 
 ## 参考文献引用
 
