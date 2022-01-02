@@ -2,6 +2,8 @@
 
 # 目录
 
+- [项目名称](#项目名称)
+- [注意事项](#注意事项)
 - [使用/示例](#使用示例)
   - [卸载与安装](#卸载与安装)
     - [配置镜像源](#配置镜像源)
@@ -37,6 +39,14 @@
 xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 西安电子科技大学研究生学位论文开题报告表XeLaTeX模板
+
+# 注意事项
+
+在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgtp/issues)反馈，注意，不同的问题开多个issue，不要堆在一个issue里。
+
+关于环境配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，想要入门LaTeX或者对LaTeX语法一知半解的请阅读[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)，想要查询数学符号的可以在[symbols-a4.pdf](https://mirrors.ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf)中搜索。本项目文档都很详细，请认真阅读README。
+
+**由于模板升级频繁，在开始使用和提问前，请确保您已经认真完整地阅读了README和示例代码。**
 
 # 使用/示例
 
