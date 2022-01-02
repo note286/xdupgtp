@@ -1,4 +1,4 @@
-# xdupgtp
+![Xidian University](xidian.png)
 
 # 目录
 
