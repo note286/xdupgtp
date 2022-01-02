@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/02 Xidian University Postgraduate Thesis Proposal class, v0.6.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/02 Xidian University Postgraduate Thesis Proposal class, v0.7.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -66,6 +66,9 @@
 % 参考文献引用
 \RequirePackage[sort&compress,square,super,comma]{natbib}
 \setlength{\bibsep}{0pt}
+% 签名图片
+\RequirePackage{graphicx}
+\graphicspath{{figures/}}
 
 % 设置PDF元数据
 \ifda
@@ -90,6 +93,16 @@
     pdfsubject={西安电子科技大学\xdupgtptitle}
   }
 }
+
+% 插入签名图片
+\newcommand\sign[1]{\includegraphics[height=1.5em,keepaspectratio]{#1}\quad}
+\newcommand\emptysign{\makebox[6em]{}}
+% 定义签名命令
+\newcommand\zzqm{}
+\newcommand\cyqm{}
+\newcommand\zdjsqm{}
+\newcommand\xnjsqm{}
+\newcommand\xyjsqm{}
 
 % 设置页面样式为空
 \pagestyle{empty}
@@ -614,8 +627,16 @@
   （开题报告结论分为两种：1.通过，按专家意见修改后进行学位论文撰写工作；2.不通过，重新开题。）
   \par}
   {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
-  组长签名：\phantom{组长签名组长签名组长签名}\\
-  成员签名：\phantom{成员签名成员签名成员签名}\\
+  % 计算组长签名和成员签名宽度最大值
+  \newlength\zzqmWidth
+  \newlength\cyqmWidth
+  \newlength\zzcyqmWidth
+  \settowidth{\zzqmWidth}{\zzqm}
+  \settowidth{\cyqmWidth}{\cyqm}
+  \setlength{\zzcyqmWidth}{\maxof{\zzqmWidth}{\maxof{\cyqmWidth}{12em}}}
+  \addtolength{\zzcyqmWidth}{-1em}
+  组长签名：\makebox[\zzcyqmWidth][l]{\zzqm}\\
+  成员签名：\makebox[\zzcyqmWidth][l]{\cyqm}\\
   年\qquad 月\qquad 日
   \end{mybox2}}
 
@@ -630,7 +651,7 @@
     \fi
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
-    指导教师签名：\phantom{指导教师签名}\\
+    指导教师签名：\makebox[6em][l]{\zdjsqm}\\
     年\qquad 月\qquad 日
     \end{mybox2}}
 \else
@@ -650,7 +671,7 @@
     \fi
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
-    校内导师签名：\phantom{校内导师签名}\\
+    校内导师签名：\makebox[6em][l]{\xnjsqm}\\
     年\qquad 月\qquad 日
     \end{mybox4}}
 \fi
@@ -668,7 +689,7 @@
     \fi
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
-    校外导师签名：\phantom{校外导师签名}\\
+    校外导师签名：\makebox[6em][l]{\xyjsqm}\\
     年\qquad 月\qquad 日
     \end{mybox4}}
 \fi
