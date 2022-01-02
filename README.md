@@ -1,3 +1,36 @@
+# xdupgtp
+
+# 目录
+
+- [使用/示例](#使用示例)
+  - [卸载与安装](#卸载与安装)
+    - [配置镜像源](#配置镜像源)
+    - [更新包管理器和所有包](#更新包管理器和所有包)
+  - [字体安装](#字体安装)
+    - [Windows](#windows)
+    - [GNU/Linux](#gnulinux)
+    - [macOS](#macos)
+    - [Overleaf](#overleaf)
+    - [TeXPage](#texpage)
+  - [下载与编辑](#下载与编辑)
+  - [学位类型](#学位类型)
+  - [编译](#编译)
+    - [命令编译](#命令编译)
+      - [latexmk编译](#latexmk编译)
+      - [四次编译](#四次编译)
+    - [文本编辑器编译](#文本编辑器编译)
+    - [WinEdt编译](#winedt编译)
+    - [TeXworks编译](#texworks编译)
+    - [TeXstudio编译](#texstudio编译)
+    - [Texmaker编译](#texmaker编译)
+    - [Overleaf编译](#overleaf编译)
+    - [TeXPage编译](#texpage编译)
+  - [参考文献引用](#参考文献引用)
+  - [字体形状与字体系列](#字体形状与字体系列)
+- [版本记录](#版本记录)
+- [免责声明](#免责声明)
+- [作者](#作者)
+
 # 项目名称
 
 xdupgtp-Xidian University Postgraduate Thesis Proposal
