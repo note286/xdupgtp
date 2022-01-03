@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/03 Xidian University Postgraduate Thesis Proposal class, v0.7.2, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/03 Xidian University Postgraduate Thesis Proposal class, v0.7.3, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -40,6 +40,8 @@
 \LoadClass[a4paper,zihao=-4,fontset=none]{ctexart}
 % 书签
 \RequirePackage[bookmarksnumbered,hidelinks]{hyperref}
+% URL自动断行
+\RequirePackage{xurl}
 % 绘制边框
 \RequirePackage[most]{tcolorbox}
 % 复选框符号
