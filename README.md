@@ -407,6 +407,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 # 版本记录
 
+- `2022-01-03` [`v0.7.4`](https://github.com/note286/xdupgtp/releases/tag/v0.7.4) 适配旧版gbt7714。
 - `2022-01-03` [`v0.7.3`](https://github.com/note286/xdupgtp/releases/tag/v0.7.3) 支持URL自动断行。
 - `2022-01-03` [`v0.7.2`](https://github.com/note286/xdupgtp/releases/tag/v0.7.2) 适配最新版tcolorbox宏包。
 - `2022-01-02` [`v0.7.1`](https://github.com/note286/xdupgtp/releases/tag/v0.7.1) 修正开题报告要求标题字体。

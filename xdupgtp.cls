@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/03 Xidian University Postgraduate Thesis Proposal class, v0.7.3, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/03 Xidian University Postgraduate Thesis Proposal class, v0.7.4, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -67,6 +67,14 @@
 \RequirePackage{environ}
 % 参考文献引用
 \RequirePackage[sort&compress,square,super,comma]{natbib}
+\RequirePackage{gbt7714}
+\@ifpackagelater{gbt7714}{2020/03/04}
+  {\PassOptionsToPackage{numbers}{natbib}}
+  {\PassOptionsToPackage{numbers}{gbt7714}}
+\newcommand\ckwx{}
+\@ifpackagelater{gbt7714}{2020/03/04}
+  {\renewcommand\ckwx{\bibliographystyle{gbt7714-numerical}}}
+  {}
 \setlength{\bibsep}{0pt}
 % 签名图片
 \RequirePackage{graphicx}
@@ -477,7 +485,7 @@
 \newenvironment{xtyj}
   {\vspace*{0.1\baselineskip}
   \begin{mybox2}}
-  {\bibliographystyle{gbt7714-numerical}
+  {\ckwx
   \bibliography{xdupgtp}
   \end{mybox2}}
 
