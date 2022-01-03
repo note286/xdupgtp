@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/02 Xidian University Postgraduate Thesis Proposal class, v0.7.1, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/03 Xidian University Postgraduate Thesis Proposal class, v0.7.2, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -158,7 +158,8 @@
   }
 }
 \ctexset{
-  subsection={name={（,）},
+  subsection={
+    name={（,）},
     number={\chinese{subsection}},
     format={\raggedright\bfseries\zihao{-4}},
     aftername={},
@@ -168,7 +169,8 @@
   }
 }
 \ctexset{
-  subsubsection={name={（,）},
+  subsubsection={
+    name={（,）},
     number={\arabic{subsubsection}},
     format={\raggedright\bfseries\zihao{-4}},
     aftername={},
@@ -379,10 +381,12 @@
 }
 
 % 定义边框边距和线宽
-\newcommand\boxmargin{5pt}
-\newcommand\boxrule{1pt}
+\newlength\boxmargin
+\setlength{\boxmargin}{5pt}
+\newlength\boxrule
+\setlength{\boxrule}{1pt}
 
-\newtcolorbox{mybox1}{
+\tcbset{
   standard jigsaw,
   sharp corners=all,
   colframe=black,
@@ -393,39 +397,24 @@
   bottom=\boxmargin,
   left=\boxmargin,
   right=\boxmargin,
-  space to upper,
-  lower separated=false,
-  halign lower=flush right,
-  before upper={\noindent \linespread{1}\fontsize{12}{20}\selectfont}
+  beforeafter skip=0pt
+}
+
+\newtcolorbox{mybox1}{
+  before upper={\noindent\linespread{1}\fontsize{12}{20}\selectfont}
 }
 
 \newtcolorbox{mybox2}{
-  standard jigsaw,
-  sharp corners=all,
-  colframe=black,
+  before upper={\setlength{\parindent}{2em}\linespread{1}\fontsize{12}{20}\selectfont},
   breakable,
   height fixed for=all,
   height fill=maximum,
-  opacityback=0,
-  boxsep=0pt,
-  boxrule=\boxrule,
-  top=\boxmargin,
-  bottom=\boxmargin,
-  left=\boxmargin,
-  right=\boxmargin,
   space to upper,
   lower separated=false,
-  halign lower=flush right,
-  before upper={\parindent 2em \linespread{1}\fontsize{12}{20}\selectfont}
+  halign lower=flush right
 }
 
 \newtcolorbox{mybox3}{
-  standard jigsaw,
-  sharp corners=all,
-  colframe=black,
-  opacityback=0,
-  boxsep=0pt,
-  boxrule=\boxrule,
   top=0pt,
   bottom=0pt,
   left=0pt,
@@ -434,21 +423,11 @@
 }
 
 \newtcolorbox{mybox4}{
-  standard jigsaw,
-  sharp corners=all,
-  colframe=black,
+  before upper={\setlength{\parindent}{2em}\linespread{1}\fontsize{12}{20}\selectfont},
   height=.5\textheight-.3\baselineskip+0.6pt,
-  opacityback=0,
-  boxsep=0pt,
-  boxrule=\boxrule,
-  top=\boxmargin,
-  bottom=\boxmargin,
-  left=\boxmargin,
-  right=\boxmargin,
   space to upper,
   lower separated=false,
-  halign lower=flush right,
-  before upper={\parindent 2em \linespread{1}\fontsize{12}{20}\selectfont}
+  halign lower=flush right
 }
 
 \ifmp
@@ -473,7 +452,7 @@
     选题来源&\subjectSource\\
     \specialrule{\boxrule}{0pt}{0pt}
     \parbox[t][\zwzyWidth][c]{1em}{中文摘要}&
-    \parindent 2em
+    \setlength{\parindent}{2em}
     \BODY \\
     \specialrule{\boxrule}{0pt}{0pt}
     \end{tabularx}
@@ -484,34 +463,34 @@
     {\begin{mybox1}
     选题来源：\subjectSource
     \end{mybox1}
-    \vspace*{-\baselineskip-\boxrule}
+    \vspace*{-\boxrule}
     \begin{mybox1}
     中文摘要：
     \end{mybox1}
-    \vspace*{-\baselineskip-\boxrule}
+    \vspace*{-\boxrule}
     \begin{mybox2}}
     {\end{mybox2}}
 \fi
 
 \newenvironment{xtyj}
-  {\vspace*{-0.6\baselineskip-\boxrule}
+  {\vspace*{0.1\baselineskip}
   \begin{mybox2}}
   {\bibliographystyle{gbt7714-numerical}
   \bibliography{xdupgtp}
   \end{mybox2}}
 
 \newenvironment{yjfa}
-  {\vspace*{-0.6\baselineskip-\boxrule}
+  {\vspace*{0.1\baselineskip}
   \begin{mybox2}}
   {\end{mybox2}}
 
 \newenvironment{yjjc}
-  {\vspace*{-0.6\baselineskip-\boxrule}
+  {\vspace*{0.1\baselineskip}
   \begin{mybox2}}
   {\end{mybox2}}
 
 \newenvironment{bgjl}
-  {\vspace*{-0.6\baselineskip-\boxrule}
+  {\vspace*{0.1\baselineskip}
   \begin{mybox2}
   \ifdp
     （着重记录专家对开题报告提出的问题及修改意见和建议。）
@@ -624,7 +603,7 @@
   \end{tabular}
   \end{center}
   \end{mybox3}
-  \vspace*{-\baselineskip-\boxrule}
+  \vspace*{-\boxrule}
   \thispagestyle{jiaozhu}
   \begin{mybox2}
   \noindent\textbf{开题报告评语及结论}
@@ -647,7 +626,7 @@
 
 \ifadegree
   \newenvironment{jsyj}
-    {\vspace*{-0.6\baselineskip-\boxrule}
+    {\vspace*{0.1\baselineskip}
     \begin{mybox2}
     \ifddegree
       （重点对博士生按照开题报告会上专家意见建议进行修改的情况予以说明。）
@@ -685,7 +664,7 @@
   \NewEnviron{xyjsyj}{}
 \else
   \newenvironment{xyjsyj}
-    {\vspace*{-\baselineskip-\boxrule}
+    {\vspace*{-\boxrule}
     \begin{mybox4}
     \ifddegree
       （重点对博士生的开题情况以及是否同意开题予以说明。）
