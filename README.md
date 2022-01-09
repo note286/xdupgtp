@@ -39,6 +39,9 @@
   - [文档类可选参数](#文档类可选参数)
   - [参考文献引用](#参考文献引用)
   - [字体形状与字体系列](#字体形状与字体系列)
+  - [交叉引用](#交叉引用)
+  - [图片](#图片)
+  - [表格](#表格)
   - [论文标题](#论文标题)
   - [签名图像](#签名图像)
 - [模板来源](#模板来源)
@@ -391,6 +394,61 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 强调\emph{测试ABCabc123}
 ```
 
+## 交叉引用
+
+本项目模板有图、表、和公式等引用命令，使用方法如下：
+
+```latex
+图的具体内容如\figureref{figu1}所示。
+表的具体内容如\tableref{tabl1}所示。
+公式的具体内容如\equationref{equa1}所示。
+```
+
+## 图片
+
+图片插入时，如果将图片文件放入`figures`文件夹，则无需添加路径，直接使用图片文件名即可，甚至扩展名也可以省略不写，可以参考如下示例：
+
+```latex
+\begin{tpfigure}
+\includegraphics[width=.3\linewidth]{fig1file}
+\captionof{figure}{方案开销}
+\label{fig1}
+\end{tpfigure}
+```
+
+如果用户需要插入多页pdf文件的某一页，可以使用`page`参数，例如插入`figfile.pdf`的第2页：
+
+```latex
+\includegraphics[page=2]{figfile}
+```
+
+另外，本项目模板实测`\textwidth`为`426.79135pt`，`\textheight`为`702.78308pt`，对插图字号有要求的用户画图时可参考这两个数值，避免图片尺寸超过页面可编辑范围。
+
+此外，由于开题报告的特殊性，不支持浮动体，本项目模板自定义`tpfigure`环境来插入图片，图片显示位置即插入位置。
+
+对于图片的格式，优先推荐`.tikz`、`.pgf`和`.pdf`格式的图片，不推荐`.png`和`.jpg`等非矢量图片格式。此外，对于已有的`.pdf`格式的图片，不需要转换成`.eps`文件。针对Microsoft Visio等绘图软件，建议使用打印成`.pdf`的方式，再使用TeX Live自带的`pdfcrop`命令进行快速高效裁剪。其中，使用`.tikz`和`.pgf`格式的图片时，用户需要使用`\input{}`命令而不是`\includegraphics{}`命令。
+
+## 表格
+
+参考`西安电子科技大学研究生学位论文模板（2015年修订版）-2019.03修订.docx`中关于表格字号的要求，本项目模板已经重定义了表格字号大小为5号，用户无需手动指定字号，可以参考如下示例：
+
+```latex
+\begin{tptable}
+\renewcommand{\arraystretch}{1.5}
+\captionof{table}{这是一个表格}
+\label{tabl1}
+\begin{tabular}{|c|c|}
+\hline
+表格 & 表格 \\
+\hline
+表格 & 表格 \\
+\hline
+\end{tabular}
+\end{tptable}
+```
+
+由于开题报告的特殊性，不支持浮动体，本项目模板自定义`tptable`环境来插入表格，表格显示位置即插入位置。
+
 ## 论文标题
 
 用户可以在`xdupgtp.tex`中配置论文标题，如果有两行，第一行写在`\thesisTitleOne{}`中，第二行写在`\thesisTitleTwo{}`中。如果论文标题仅有一行，`\thesisTitleTwo{}`中的值保持空即可，模板会自动判断第二行为空不输出下划线。
@@ -416,6 +474,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 # 版本记录
 
+- `2022-01-09` [`v0.8.0`](https://github.com/note286/xdupgtp/releases/tag/v0.8.0) 支持插入图表。
 - `2022-01-03` [`v0.7.4`](https://github.com/note286/xdupgtp/releases/tag/v0.7.4) 适配旧版gbt7714。
 - `2022-01-03` [`v0.7.3`](https://github.com/note286/xdupgtp/releases/tag/v0.7.3) 支持URL自动断行。
 - `2022-01-03` [`v0.7.2`](https://github.com/note286/xdupgtp/releases/tag/v0.7.2) 适配最新版tcolorbox宏包。

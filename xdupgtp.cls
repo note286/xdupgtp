@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/03 Xidian University Postgraduate Thesis Proposal class, v0.7.4, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/09 Xidian University Postgraduate Thesis Proposal class, v0.8.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -79,6 +79,38 @@
 % 签名图片
 \RequirePackage{graphicx}
 \graphicspath{{figures/}}
+% 浮动标题
+\RequirePackage[labelsep=quad]{caption}
+\setlength{\abovecaptionskip}{6bp}
+\setlength{\belowcaptionskip}{6bp}
+\renewcommand{\captionfont}{\zihao{5}}
+% 自动空格
+\RequirePackage{xspace}
+\xspaceaddexceptions{。？！，、；：“”‘’—….－-～·《》<>＿}
+
+% 交叉引用
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\newcommand{\figureref}[1]{图\xspace\ref{#1}\xspace}
+\newcommand{\tableref}[1]{表\xspace\ref{#1}\xspace}
+\newcommand{\equationref}[1]{公式(\ref{#1})}
+
+\NewEnviron{tpfigure}{
+  \begin{minipage}{\textwidth}
+  \vspace*{6bp}
+  \centering
+  \BODY
+  \end{minipage}
+}
+
+\NewEnviron{tptable}{
+  \begin{minipage}{\textwidth}
+  \centering
+  \zihao{5}
+  \BODY
+  \vspace*{6bp}
+  \end{minipage}
+}
 
 % 设置PDF元数据
 \ifda
