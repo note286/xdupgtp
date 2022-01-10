@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/09 Xidian University Postgraduate Thesis Proposal class, v0.8.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/10 Xidian University Postgraduate Thesis Proposal class, v0.9.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -78,7 +78,7 @@
 \setlength{\bibsep}{0pt}
 % 签名图片
 \RequirePackage{graphicx}
-\graphicspath{{figures/}}
+\graphicspath{{figures/}{figures/sign/}}
 % 浮动标题
 \RequirePackage[labelsep=quad]{caption}
 \setlength{\abovecaptionskip}{6bp}
@@ -145,6 +145,11 @@
 \newcommand\zdjsqm{}
 \newcommand\xnjsqm{}
 \newcommand\xyjsqm{}
+% 定义手写日期命令
+\newcommand\cyqmrq{年\qquad 月\qquad 日}
+\newcommand\zdjsqmrq{年\qquad 月\qquad 日}
+\newcommand\xnjsqmrq{年\qquad 月\qquad 日}
+\newcommand\xyjsqmrq{年\qquad 月\qquad 日}
 
 % 设置页面样式为空
 \pagestyle{empty}
@@ -663,7 +668,7 @@
   \addtolength{\zzcyqmWidth}{-1em}
   组长签名：\makebox[\zzcyqmWidth][l]{\zzqm}\\
   成员签名：\makebox[\zzcyqmWidth][l]{\cyqm}\\
-  年\qquad 月\qquad 日
+  \cyqmrq
   \end{mybox2}}
 
 \ifadegree
@@ -678,7 +683,7 @@
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
     指导教师签名：\makebox[6em][l]{\zdjsqm}\\
-    年\qquad 月\qquad 日
+    \zdjsqmrq
     \end{mybox2}}
 \else
   \NewEnviron{jsyj}{}
@@ -698,7 +703,7 @@
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
     校内导师签名：\makebox[6em][l]{\xnjsqm}\\
-    年\qquad 月\qquad 日
+    \xnjsqmrq
     \end{mybox4}}
 \fi
 
@@ -716,6 +721,6 @@
     \par}
     {\tcblower\linespread{1}\fontsize{12}{30}\selectfont
     校外导师签名：\makebox[6em][l]{\xyjsqm}\\
-    年\qquad 月\qquad 日
+    \xyjsqmrq
     \end{mybox4}}
 \fi
