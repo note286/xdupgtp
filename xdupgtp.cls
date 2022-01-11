@@ -176,7 +176,7 @@
   % 定义黑体字体
   \newCJKfontfamily\heiti{simhei.ttf}[Path=fonts/,BoldFont={simhei.ttf},BoldFeatures={FakeBold=\FakeBoldValue}]
   % 定义华文中宋字体
-  \newCJKfontfamily\stzhongsong{STZHONGS.TTF}[BoldFont={STZHONGS.TTF},BoldFeatures={FakeBold=\FakeBoldValue}]
+  \newCJKfontfamily\stzhongsong{STZHONGS.TTF}[Path=fonts/,BoldFont={STZHONGS.TTF},BoldFeatures={FakeBold=\FakeBoldValue}]
 \else
   % 配置默认英文字体
   \setmainfont{Times New Roman}
