@@ -488,6 +488,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 # 版本记录
 
+- `2022-01-11` [`v0.9.1`](https://github.com/note286/xdupgtp/releases/tag/v0.9.1) 修正开题报告评语及结论中脚注缩进。
 - `2022-01-10` [`v0.9.0`](https://github.com/note286/xdupgtp/releases/tag/v0.9.0) 支持插入手写日期图像。
 - `2022-01-09` [`v0.8.0`](https://github.com/note286/xdupgtp/releases/tag/v0.8.0) 支持插入图表。
 - `2022-01-03` [`v0.7.4`](https://github.com/note286/xdupgtp/releases/tag/v0.7.4) 适配旧版gbt7714。

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/10 Xidian University Postgraduate Thesis Proposal class, v0.9.0, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/11 Xidian University Postgraduate Thesis Proposal class, v0.9.1, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -58,7 +58,7 @@
 \RequirePackage{xifthen}
 % 页脚
 \RequirePackage{fancyhdr}
-\fancypagestyle{jiaozhu}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[L]{\zihao{5} 注：填写评价意见时，请在相应评价意见前的“$\boxempty$”中打“$\checkmark$”。}}
+\fancypagestyle{jiaozhu}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[L]{\zihao{5} \qquad 注：填写评价意见时，请在相应评价意见前的“$\boxempty$”中打“$\checkmark$”。}}
 % 下划线
 \RequirePackage{xeCJKfntef}
 % 页面大小
