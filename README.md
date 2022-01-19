@@ -43,6 +43,7 @@
   - [图片](#图片)
   - [表格](#表格)
   - [论文标题](#论文标题)
+  - [评价意见](#评价意见)
   - [签名图像](#签名图像)
 - [模板来源](#模板来源)
 - [版本记录](#版本记录)
@@ -423,6 +424,10 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 用户可以在`xdupgtp.tex`中配置论文标题，如果有两行，第一行写在`\thesisTitleOne{}`中，第二行写在`\thesisTitleTwo{}`中。如果论文标题仅有一行，`\thesisTitleTwo{}`中的值保持空即可，模板会自动判断第二行为空不输出下划线。
 
+## 评价意见
+
+用户可以在`xdupgtp.tex`中填写相应的开题报告评价意见，可选值为`优秀`、`良好`、`合格`和`不合格`，如果不需要勾选，将值留空即可。
+
 ## 签名图像
 
 由于部分用户线上进行开题，教师无法现场手写签名，故支持签名图像替代手写签名。
@@ -458,6 +463,7 @@ Texmaker内置了PDF查看器，支持正向同步和反向同步功能，具体
 
 # 版本记录
 
+- `2022-01-19` [`v1.0.0`](https://github.com/note286/xdupgtp/releases/tag/v1.0.0) 支持勾选开题报告评价意见。
 - `2022-01-12` [`v0.9.2`](https://github.com/note286/xdupgtp/releases/tag/v0.9.2) 修复Overleaf中华文中宋字体路径 [PR #1](https://github.com/note286/xdupgtp/pull/1)。
 - `2022-01-11` [`v0.9.1`](https://github.com/note286/xdupgtp/releases/tag/v0.9.1) 修正开题报告评语及结论中脚注缩进。
 - `2022-01-10` [`v0.9.0`](https://github.com/note286/xdupgtp/releases/tag/v0.9.0) 支持插入手写日期图像。

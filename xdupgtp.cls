@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{xdupgtp}[2022/01/12 Xidian University Postgraduate Thesis Proposal class, v0.9.2, created by @note286, published in https://note286.github.io/xdupgtp/]
+\ProvidesClass{xdupgtp}[2022/01/19 Xidian University Postgraduate Thesis Proposal class, v1.0.0, created by @note286, published in https://note286.github.io/xdupgtp/]
 
 % 学术学位博士研究生 Doctor of Academic
 \newif\ifda\datrue
@@ -547,9 +547,76 @@
   \par}
   {\end{mybox2}}
 
+% 定义复选框
+\newcommand\tpboxempty{\makebox[1em][l]{$\boxempty$}}
+\newcommand\tpboxcheck{\makebox[1em][l]{\makebox[1pt][l]{$\boxempty$}$\checkmark$}}
+% 论文选题
+\newcommand\lwxtyja{\tpboxempty}
+\newcommand\lwxtyjb{\tpboxempty}
+\newcommand\lwxtyjc{\tpboxempty}
+\newcommand\lwxtyjd{\tpboxempty}
+\newcommand\lwxtpjyj[1]{
+  \ifthenelse{\equal{#1}{优秀}}{\renewcommand\lwxtyja{\tpboxcheck}}{
+    \ifthenelse{\equal{#1}{良好}}{\renewcommand\lwxtyjb{\tpboxcheck}}{
+      \ifthenelse{\equal{#1}{合格}}{\renewcommand\lwxtyjc{\tpboxcheck}}{
+        \ifthenelse{\equal{#1}{不合格}}{\renewcommand\lwxtyjd{\tpboxcheck}}{
+        }
+      }
+    }
+  }
+}
+\newcommand\lwxtyj{\lwxtyja 优秀\newline \lwxtyjb 良好\newline \lwxtyjc 合格\newline \lwxtyjd 不合格}
+% 研究方案
+\newcommand\yjfayja{\tpboxempty}
+\newcommand\yjfayjb{\tpboxempty}
+\newcommand\yjfayjc{\tpboxempty}
+\newcommand\yjfayjd{\tpboxempty}
+\newcommand\yjfapjyj[1]{
+  \ifthenelse{\equal{#1}{优秀}}{\renewcommand\yjfayja{\tpboxcheck}}{
+    \ifthenelse{\equal{#1}{良好}}{\renewcommand\yjfayjb{\tpboxcheck}}{
+      \ifthenelse{\equal{#1}{合格}}{\renewcommand\yjfayjc{\tpboxcheck}}{
+        \ifthenelse{\equal{#1}{不合格}}{\renewcommand\yjfayjd{\tpboxcheck}}{
+        }
+      }
+    }
+  }
+}
+\newcommand\yjfayj{\yjfayja 优秀\newline \yjfayjb 良好\newline \yjfayjc 合格\newline \yjfayjd 不合格}
+% 研究基础
+\newcommand\yjjcyja{\tpboxempty}
+\newcommand\yjjcyjb{\tpboxempty}
+\newcommand\yjjcyjc{\tpboxempty}
+\newcommand\yjjcyjd{\tpboxempty}
+\newcommand\yjjcpjyj[1]{
+  \ifthenelse{\equal{#1}{优秀}}{\renewcommand\yjjcyja{\tpboxcheck}}{
+    \ifthenelse{\equal{#1}{良好}}{\renewcommand\yjjcyjb{\tpboxcheck}}{
+      \ifthenelse{\equal{#1}{合格}}{\renewcommand\yjjcyjc{\tpboxcheck}}{
+        \ifthenelse{\equal{#1}{不合格}}{\renewcommand\yjjcyjd{\tpboxcheck}}{
+        }
+      }
+    }
+  }
+}
+\newcommand\yjjcyj{\yjjcyja 优秀\newline \yjjcyjb 良好\newline \yjjcyjc 合格\newline \yjjcyjd 不合格}
+% 进度安排
+\newcommand\jdapyja{\tpboxempty}
+\newcommand\jdapyjb{\tpboxempty}
+\newcommand\jdapyjc{\tpboxempty}
+\newcommand\jdapyjd{\tpboxempty}
+\newcommand\jdappjyj[1]{
+  \ifthenelse{\equal{#1}{优秀}}{\renewcommand\jdapyja{\tpboxcheck}}{
+    \ifthenelse{\equal{#1}{良好}}{\renewcommand\jdapyjb{\tpboxcheck}}{
+      \ifthenelse{\equal{#1}{合格}}{\renewcommand\jdapyjc{\tpboxcheck}}{
+        \ifthenelse{\equal{#1}{不合格}}{\renewcommand\jdapyjd{\tpboxcheck}}{
+        }
+      }
+    }
+  }
+}
+\newcommand\jdapyj{\jdapyja 优秀\newline \jdapyjb 良好\newline \jdapyjc 合格\newline \jdapyjd 不合格}
+
 \newenvironment{pyjl}
   {\vspace*{0.1\baselineskip-0.5\boxrule}
-  \newcommand\yijian{$\boxempty$优秀\newline $\boxempty$良好\newline $\boxempty$合格\newline $\boxempty$不合格}
   \begin{mybox3}
   \vspace*{-\boxrule}
   \begin{center}
@@ -561,7 +628,7 @@
     \textbf{论文选题}
     &1.选题为学科前沿，具有开创性，对国民经济、科学技术发展具有理论意义或实用价值，研究方向明确；\newline
     2.国内外研究现状综合全面反映该学科和相关领域的发展和最新成果，归纳总结正确。
-    &\yijian\\
+    &\lwxtyj\\
     \specialrule{\boxrule}{0pt}{0pt}
     \textbf{研究方案}
     &1.研究目标明确；\newline
@@ -569,22 +636,22 @@
     3.研究内容具有创新性，探索了有价值的现象、新规律，提出了新命题、新方法；\newline
     4.研究或设计方法科学合理，关键技术有难度；\newline
     5.预期取得的研究成果具有较高水平和较大影响力。
-    &\yijian\\
+    &\yjfayj\\
     \specialrule{\boxrule}{0pt}{0pt}
     \textbf{研究基础}
     &1.具备了较好的实验条件和较为深厚的研究工作积累；\newline
     2.在国际及国内重要刊物上发表了与学位论文相关的文章。
-    &\yijian\\
+    &\yjjcyj\\
     \specialrule{\boxrule}{0pt}{0pt}
     \textbf{进度安排}
     &时间安排充裕、合理。
-    &\yijian\\
+    &\jdapyj\\
   \else
     \ifdp
       \textbf{论文选题}
       &1.选题来自相关工程领域的重大、重点工程项目；\newline
       2.选题具有重要的工程应用价值和前景。
-      &\yijian\\
+      &\lwxtyj\\
       \specialrule{\boxrule}{0pt}{0pt}
       \textbf{研究方案}
       &1.研究目标明确；\newline
@@ -592,22 +659,22 @@
       3.研究内容具有创新性，发现了新现象、探索了新规律；或提出了新理论、新技术、新方法，解决了国家专项工程的关键技术难题，修正或发展了已有理论或技术；\newline
       4.研究或设计方法科学合理，关键技术有难度；\newline
       5.预期取得的研究成果具有较高水平和较大影响力。
-      &\yijian\\
+      &\yjfayj\\
       \specialrule{\boxrule}{0pt}{0pt}
       \textbf{研究基础}
       &1.具备了较好的实验条件和较为深厚的研究工作积累；\newline
       2.发表了与重大科研项目有关的论文、行业标准、相关专著、科技奖励、发明专利及其他相关实用性成果。
-      &\yijian\\
+      &\yjjcyj\\
       \specialrule{\boxrule}{0pt}{0pt}
       \textbf{进度安排}
       &时间安排充裕、合理。
-      &\yijian\\
+      &\jdapyj\\
     \else
       \ifma
         \textbf{论文选题}
         &1.选题接触学科前沿，对国民经济、科技发展具有一定的理论意义和实用价值；\newline
         2.国内外研究现状综合全面反映该学科或相关领域的最新研究成果，归纳总结正确。
-        &\yijian\\
+        &\lwxtyj\\
         \specialrule{\boxrule}{0pt}{0pt}
         \textbf{研究方案}
         &1.研究目标明确；\newline
@@ -615,35 +682,35 @@
         3.研究内容有独到之处，提出了新命题、新方法；较好地解决了自然科学或工程技术中的某一具体问题；\newline
         4.研究或设计方法科学合理，关键技术有难度；\newline
         5.预期取得的研究成果有一定的应用价值，可产生一定的社会效益和经济效益。
-        &\yijian\\
+        &\yjfayj\\
         \specialrule{\boxrule}{0pt}{0pt}
         \textbf{研究基础}
         &具备了较好的实验条件和较为深厚的研究工作积累。
-        &\yijian\\
+        &\yjjcyj\\
         \specialrule{\boxrule}{0pt}{0pt}
         \textbf{进度安排}
         &时间安排充裕、合理。
-        &\yijian\\
+        &\jdapyj\\
       \else
         \textbf{论文选题}
         &1.选题具有重要的理论意义或实际意义，是直接面向工程或具有探索性的应用课题；\newline
         2.国内外研究现状综合全面反映该领域的最新研究成果，归纳总结正确。
-        &\yijian\\
+        &\lwxtyj\\
         \specialrule{\boxrule}{0pt}{0pt}
         \textbf{研究方案}
         &1.研究目标明确；\newline
         2.整体设想及构架科学合理；\newline
         3.研究或设计方法科学合理，关键技术有难度；\newline
         4.预期取得的研究成果具有实用性和新技术应用价值，可产生一定的社会效益和经济效益。
-        &\yijian\\
+        &\yjfayj\\
         \specialrule{\boxrule}{0pt}{0pt}
         \textbf{研究基础}
         &具备了较好的实验条件和较为深厚的研究工作积累。
-        &\yijian\\
+        &\yjjcyj\\
         \specialrule{\boxrule}{0pt}{0pt}
         \textbf{进度安排}
         &时间安排充裕、合理。
-        &\yijian\\
+        &\jdapyj\\
       \fi
     \fi
   \fi
