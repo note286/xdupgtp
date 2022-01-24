@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/note286/xdupgtp"><img src="logo.png"></a></p>
+<p align="center"><a href="https://github.com/note286/xdupgtp"><img src="logo.svg" height="50px"></a></p>
 <p align="center">
 <a href="https://github.com/note286/xdupgtp/blob/main/LICENSE"><img src="https://img.shields.io/github/license/note286/xdupgtp"></a>
 <a href="https://github.com/note286/xdupgtp"><img src="https://img.shields.io/github/stars/note286/xdupgtp"></a>
