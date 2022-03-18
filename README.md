@@ -60,6 +60,8 @@ xdupgtp-Xidian University Postgraduate Thesis Proposal
 
 在使用过程中有任何问题或者建议，可以提[Issue](https://github.com/note286/xdupgtp/issues)反馈，注意，不同的问题开多个issue，不要堆在一个issue里。
 
+虽然我感谢贡献，但我认为对于本模板，pull requests通常不是一个好方法（除非已经讨论并同意更改）。模板的稳定性非常重要，这意味着对模板的更改必然非常保守。这也意味着在进行任何更改之前必须进行大量讨论。因此，如果您确实决定发布pull requests，请记住这一点：我确实欣赏新想法，但不能总是将它们集成到模板中，我很可能会拒绝以这种方式进行的更新。
+
 关于环境配置请阅读[install-latex-guide-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/install-latex-guide-zh-cn/install-latex-guide-zh-cn.pdf)，想要入门LaTeX或者对LaTeX语法一知半解的请阅读[lshort-zh-cn.pdf](https://mirrors.ustc.edu.cn/CTAN/info/lshort/chinese/lshort-zh-cn.pdf)，想要查询数学符号的可以在[symbols-a4.pdf](https://mirrors.ustc.edu.cn/CTAN/info/symbols/comprehensive/symbols-a4.pdf)中搜索。本项目文档都很详细，请认真阅读README。
 
 **由于模板升级频繁，在开始使用和提问前，请确保您已经认真完整地阅读了README和示例代码。**
